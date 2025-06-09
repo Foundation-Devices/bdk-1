@@ -65,7 +65,7 @@ impl<A: Ord> Default for TxUpdate<A> {
     }
 }
 
-impl<A> TxUpdate<A> {
+impl<A: Ord> TxUpdate<A> {
     /// Returns true if the `TxUpdate` contains no elements in any of its fields.
     pub fn is_empty(&self) -> bool {
         self.txs.is_empty()

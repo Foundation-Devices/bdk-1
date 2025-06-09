@@ -404,7 +404,7 @@ impl<A: Ord> Default for SyncResponse<A> {
     }
 }
 
-impl<A> SyncResponse<A> {
+impl<A: Ord> SyncResponse<A> {
     /// Returns true if the `SyncResponse` is empty.
     pub fn is_empty(&self) -> bool {
         self.tx_update.is_empty() && self.chain_update.is_none()
@@ -568,7 +568,7 @@ impl<K, A: Ord> Default for FullScanResponse<K, A> {
     }
 }
 
-impl<K, A> FullScanResponse<K, A> {
+impl<K, A: Ord> FullScanResponse<K, A> {
     /// Returns true if the `FullScanResponse` is empty.
     pub fn is_empty(&self) -> bool {
         self.tx_update.is_empty()
